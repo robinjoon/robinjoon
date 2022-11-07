@@ -1,25 +1,57 @@
-# robinjoon 😉
+# Who am I
 
-![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fkim-soohyeon&count_bg=%23FFDAC7&title_bg=%23FFADAD&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)
+프로그램과 함께 성장하는 개발자 임수빈 입니다. 개발자는 자신이 만드는 프로그램이 더 좋은 프로그램이 되도록 노력하는 사람이라고 생각합니다. 좋은 프로그램이란, 원하는대로 동작하는 프로그램이며 동시에 새로운 기능을 추가하기 쉬운 프로그램이고, 그 코드를 사람이 읽고 이해하기 쉬운 프로그램이라고 생각합니다. 따라서, 디자인패턴, 클린코드에 특히 관심이 있습니다.
 
-# 💪Skills
-### Platforms & Languages
-![Java](https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F.svg?&style=for-the-badge&logo=Spring&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84.svg?&style=for-the-badge&logo=Android&logoColor=white)
+# How to contact me
+Email 
+- robin980108@naver.com 
+- 0108dlatnqls@gmail.com 
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1.svg?&style=for-the-badge&logo=MySQL&logoColor=white)
+Blog 
+- [티스토리](https://blog.robinjoon.xyz) 
+- [Notion](https://robinjoon.notion.site/e1cd3a16c4954d9a9f2c50a6293e523b)
 
-### Tools
-![Git](https://img.shields.io/badge/Git-F05032.svg?&style=for-the-badge&logo=Git&logoColor=white)
-![Eclipse IDE](https://img.shields.io/badge/Eclipse%20IDE-2C2255.svg?&style=for-the-badge&logo=Eclipse%20IDE&logoColor=white)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?&style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white)
-![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?&style=for-the-badge&logo=Android%20Studio&logoColor=white)
+# What I did
 
- 
-# :mailbox_with_mail: Contacts
-[![Tech Blog Badge](http://img.shields.io/badge/-Tech%20blog-black?style=flat-square&logo=github&link=https://blog.robinjoon.space/)](https://blog.robinjoon.space/)
-[![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:0108dlatnqls@gmail.com)](mailto:0108dlatnqls@gmail.com)
-[![Naver Badge](https://img.shields.io/badge/Naver-03C75A?style=flat-square&logo=Naver&logoColor=white&link=mailto:robin980108@naver.com)](mailto:robin980108@naver.com)
+그동안 참여한 프로젝트들 링크 입니다.
+
+## 신년 목표설정 시스템
+
+[https://github.com/robinjoon/NewYearGoal](https://github.com/robinjoon/NewYearGoal)
+
+## 목표 달성 자극 시스템 : 골키퍼
+
+### 팀 & 프로젝트 소개 페이지
+
+[Goalkeeper(골키퍼)](https://github.com/Goal-achievement-system)
+
+### 회고록
+[회고록](https://robinjoon.notion.site/Great-ab2740cf8f6e450684d15e816da65742)
+
+### 백엔드 REAT API 관련 레퍼지토리
+
+[https://github.com/Goal-achievement-system/backend](https://github.com/Goal-achievement-system/backend)
+
+### 백엔드 웹과 관련 없는 기능을 위한 레퍼지토리
+
+[https://github.com/Goal-achievement-system/backend-non-web-part](https://github.com/Goal-achievement-system/backend-non-web-part)
+
+## 학생 성적 관리 시스템 : Great
+
+### 팀 & 프로젝트 소개 페이지
+
+[Great 그레잇](https://github.com/Great-Student-Manage-System)
+
+### 백엔드 레퍼지토리
+
+[https://github.com/Great-Student-Manage-System/Backend](https://github.com/Great-Student-Manage-System/Backend)
+
+## 동아리 홈페이지
+
+### 리팩토링 전
+
+[GitHub - robinjoon/HUST_WEB at beforeRefactoring](https://github.com/robinjoon/HUST_WEB/tree/beforeRefactoring)
+
+### 1차 리팩토링 시도 - 진행하다가 멈춤
+
+[GitHub - robinjoon/HUST_WEB at firstRefactoring](https://github.com/robinjoon/HUST_WEB/tree/firstRefactoring)
