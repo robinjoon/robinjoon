@@ -46,12 +46,3 @@ Blog
 
 [https://github.com/Great-Student-Manage-System/Backend](https://github.com/Great-Student-Manage-System/Backend)
 
-## 동아리 홈페이지
-
-### 리팩토링 전
-
-[GitHub - robinjoon/HUST_WEB at beforeRefactoring](https://github.com/robinjoon/HUST_WEB/tree/beforeRefactoring)
-
-### 1차 리팩토링 시도 - 진행하다가 멈춤
-
-[GitHub - robinjoon/HUST_WEB at firstRefactoring](https://github.com/robinjoon/HUST_WEB/tree/firstRefactoring)
