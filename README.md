@@ -1,15 +1,16 @@
 # 기술 스택
 
-1. **`Java`** 
+1. **`Kotlin`**, **`Java`** 
 2. **`Spring`**, **`Spring Boot`**
-3. **`JPA`**, **`Spring Data JPA`** 
+3. **`Exposed`**, **`JPA`**, **`Spring Data JPA`** 
 4. **`MariaDB`** , `Mysql` 
 5. `Servlet` & `JSP`
 # 이력
 
 | 연도 | 활동 |
 | --- | --- |
-| 2024 ~ 현재 | 우아한테크코스 6기 웹백엔드 과정 |
+| 2025 ~ 현재 | 커넥트웨이브 다나와개발본부 |
+| 2024 ~ 2024 | 우아한테크코스 6기 웹백엔드 과정 |
 | 2022 | https://github.com/Goal-achievement-system 백엔드 개발자 |
 | 2022 | https://github.com/Great-Student-Manage-System 백엔드 개발자 |
 | 2020 ~ 2021 | 홍익대학교 정보보안 동아리 HUST 홈페이지 개발 |
