@@ -1,113 +1,113 @@
+# 낭만 개발자 임수빈 입니다
+
+백엔드 API 개발부터 실시간 데이터 파이프라인(Flink CDC), Kubernetes 플랫폼 운영까지 end-to-end로 직접 설계하고 운영한 경험이 있는 백엔드 개발자입니다. 공용 라이브러리 설계, 오픈소스 커스텀, 성능 최적화 등 팀의 기술적 난제를 주도적으로 해결해 왔으며, 배운 것을 사내 기술 공유·블로그·외부 발표로 적극적으로 환원합니다.
+
+📎 [포트폴리오](https://www.notion.so/328e2d0a976a8037b81ec37660f05a2a) · ✍️ [블로그](https://blog.robinjoon.xyz) · ✉️ 0108dlatnqls@gmail.com
+
 # 기술 스택
 
-1. **`Kotlin`**, **`Java`** 
-2. **`Spring`**, **`Spring Boot`**
-3. **`Exposed`**, **`JPA`**, **`Spring Data JPA`** 
-4. **`MariaDB`** , `Mysql` 
-5. `Servlet` & `JSP`
-# 이력
-
-| 연도 | 활동 |
+| 분류 | 기술 |
 | --- | --- |
-| 2026.06.09 ~ 현재 | 여기어때컴퍼니 숙박플랫폼개선TF |
-| 2025 ~ 2026.05 | 커넥트웨이브 다나와개발본부 |
-| 2024 ~ 2024 | 우아한테크코스 6기 웹백엔드 과정 |
-| 2022 | https://github.com/Goal-achievement-system 백엔드 개발자 |
-| 2022 | https://github.com/Great-Student-Manage-System 백엔드 개발자 |
-| 2020 ~ 2021 | 홍익대학교 정보보안 동아리 HUST 홈페이지 개발 |
-| 2018 | 홍익대학교 정보보안 동아리 HUST 부회장 |
-| 2016 ~ 2023 | 홍익대학교 정보보안 동아리 HUST |
-| 2016 ~ 2023 | 홍익대학교 컴퓨터정보통신공학과 재학 |
-# 프로젝트 목록
+| Language & Framework | **`Kotlin`**, **`Spring Boot`**, **`Exposed ORM`**, **`Netflix DGS`**, `Kotest` |
+| Data & Streaming | **`Apache Flink`**, **`Flink CDC`**, **`Kafka`**, `Avro`, `Schema Registry` |
+| Infra & Ops | `PostgreSQL`, `MongoDB`, **`Kubernetes`**, `Istio`, `ArgoCD`, `Grafana`, `Prometheus` |
 
-## 골키퍼
+# 경력
 
-목표 달성 자극시스템 골키퍼 프로젝트 입니다.
+## 여기어때컴퍼니 | 숙박플랫폼개선TF (2026.06 ~ 현재)
 
-사용 기술 : **`Spring Interceptor`, `ExceptionHandler`**
+## (주)커넥트웨이브 플랫폼개발본부 | 플랫폼개발팀 (2024.12 ~ 2026.05)
 
-레퍼지토리 : [https://github.com/Goal-achievement-system/backend](https://github.com/Goal-achievement-system/backend)
+### 100명 규모 개발 조직 공용 라이브러리 개발 (2건) — 설계 및 구현 주도
 
-### 진행 업무
+> 2개 프로젝트 · 15개 모듈에서 공통으로 사용되는 라이브러리 2건 설계 및 구현
 
-- **공통 작업 처리를 위한 `Spring Interceptor` 사용**
-    - Access Token 을 이용한 사용자 인증 처리 작업은 거의 모든 기능에서 동작해야 하기 때문에 모든 Controller보다 먼저 실행된다는 특성을 가진 `Spring Interceptor` 를 사용했습니다.
-- **`Spring Interceptor` 와 `Spring WebMvcConfigurer` 에서 발생한 CORS 설정 문제 해결**
-    - CORS 설정이 정상동작하지 않는 문제가 있었습니다.
-    - 문제를 해결하기 위해 CORS에 대해 깊이 있게 학습한 후 BurpSuite 를 이용해 패킷을 분석하여 prefligth 요청이 정상처리되지 않아 문제가 발생하는 것을 알아냈습니다.
-    - Access Token 관련 처리를 하는 Interceptor 가 prefligth 요청에서도 Access Token을 추출하려 시도해서 발생하는 문제임을 알았고, 예외처리를 해서 수정할 수 있었습니다.
-    - 자세한 사항은 [블로그 포스팅](https://www.notion.so/CORS-a320cfb895234bdeb8cc5e7248ac65a2) 에서 확인할 수 있습니다.
-- **중복된 예외 작업 처리를 위한 `ExceptionHandler` 사용**
-    - Controller 반복적인 try-catch 문이 있었습니다. 중복된 코드는 가독성을 떨어트리고 실수를 유발할 수 있기 때문에 제거해야 했습니다.
-    - 이를 위해 예외를 추상화하고 **`ExceptionHandler`** 를 이용해 예외 처리 작업을 Controller에서 분리했습니다.
+- **Audit Log 라이브러리** — Spring Boot 2.x / 3.x 동시 지원, 저장소 추상화 + AOP 구조로 신규 플랫폼 전체 적용
+- **Kotlin Exposed ORM 페이징 라이브러리** — Spring Data `Pageable` 통합, 전체 개발 조직의 페이징 처리 방식 통일
 
-## 골키퍼 2
+### 상품 저장 시스템 부하 테스트 및 성능 최적화 — 병목 분석 및 개선 주도
 
-기존에 진행했던 골키퍼 프로젝트에 새로운 기능과 기술을 적용한 프로젝트 입니다.
+> 5만 건 대량 적재 기준 **200초 → 2초 (100배 개선)**
 
-대표 사용 기술 : **`Spring Data JPA`, `GitHub Actions`, `Servlet Filter`, `Spring AOP`, `Spring Interceptor`**
+- Thread Dump 기반 병목 분석(MongoDB 예외 누적) → **200초 → 10초**, 이후 Bulk 처리·Scale-out 등 추가 최적화로 최종 **2초** 달성
 
-레퍼지토리 : [https://github.com/GoalKeeperV2-0/GoalKeeperV2-backend-](https://github.com/GoalKeeperV2-0/GoalKeeperV2-backend-)
+### AI 버티컬 서비스 관리자 API 및 OpenAI 연동 배치 시스템 구축 — API 및 배치 시스템 구현 담당
 
-### 진행 업무
+> OpenAI Batch API 기반 상품 추천 문구 자동 생성 파이프라인, **토큰 비용 50% 절감**
 
-- **`Servlet Filter`, `Spring AOP`, `Spring Interceptor` 를 사용한 로깅 시스템 구축**
-    - 이전 버전에는 로그를 남기지 않아 새로운 기능을 추가할 때마다 발생하는 오류를 트래킹하기가 어려웠습니다.
-    - 이를 해결하기 위해 **`Servlet Filter`**, **`Spring AOP`**, **`Spring Interceptor`** 를 사용해 로깅 시스템을 구축했습니다.
-    - 보다 자세한 학습 과정은 [블로그 포스팅](https://www.notion.so/Spring-Boot-REST-API-System-Logging-6a833112c36b4482855de067b255e1c7) 에서 확인할 수 있습니다.
-- **객체지향적인 설계를 위한 `Spring Data JPA` 사용**
-    - 기존 버전에서는 JdbcTemplate를 사용했기 때문에 SQL 을 직접 작성해야 했고, 비즈니스 로직이 SQL 내부에 숨어들어가기 쉬웠습니다.
-    - 이를 해결하기 위해 **`Spring Data JPA`** 를 사용해 SQL 을 직접 작성하지 않고 변경될 가능성이 적은 비즈니스 로직은 엔티티로, 변경되기 쉬운 운영 정책은 서비스에서 구현할 수 있었습니다.
-- **자동 배포를 위한 `GitHub Actions` 사용**
-    - 기존에는 변경사항이 발생할 때 마다 직접 터미널을 이용해 서버에 접속해 파일을 옮기고 실행해야 했습니다.
-    - 그 과정에서 기존에 실행중인 프로세스를 중지하지 않고 실행한다던지, 중지만 하고 새 버전을 실행하지 않는 등의 상황이 자주 발생했습니다.
-    - 이를 해결하기 위해 GitHub 에서 제공하는 CI 기능인 **`GitHub Actions`** 와 간단한 Bash Shell Script를 사용해 Push 시 자동으로 빌드 및 테스트 코드 수행 후 서버에 배포되게 했습니다.
-- 더 효율적인 API 설계를 위한 고찰
-    - 이 시스템에서 사용하는 목표와 인증 이라는 도메인은 일반적인 게시글과 댓글 의 관계처럼 주종 관계입니다. 하지만, 목표 도메인은 인증이 있어야만 사용자에게 제공된다는 차이점이 있습니다.
-    - 이런 특이한 도메인 관계에 의해 데이터를 조회하는 방식에 따른 [효율성 차이를 분석](https://www.notion.so/2249852f04a148179bf135373f1d071b)해야 할 필요가 있었습니다.
+- 관리자 설정 + 주간 배치 구조로 AI 추천 문구 생성 파이프라인 구축, 블라인드 테스트로 품질 검증
+- OpenAI Batch API + 1분 주기 폴링(`tailrec`)으로 안정적 운영 체계 구성
 
-## 그레잇
+### Apache Flink 기반 CDC 파이프라인 시스템 구축 — 설계 및 구축 주도
 
-소규모 학원 선생님을 위한 학생 관리 시스템 그레잇 프로젝트입니다.
+> MongoDB → Kafka → Hadoop 실시간 CDC 파이프라인, **평균 3만 TPS / 지연 500ms 미만**
 
-대표 사용 기술 : **`AccessToken`, `RefreshToken`, `Cookie`**
+- Flink SQL(Streampark) 프로토타이핑 후 Before/After Diff 처리 한계를 식별, Kotlin DataStream API로 전환
+- Kubernetes Flink Operator + ArgoCD GitOps 배포 파이프라인 구축으로 운영 안정성 확보
 
-레퍼지토리 : [https://github.com/Great-Student-Manage-System/Backend](https://github.com/Great-Student-Manage-System/Backend)
+### Apache Flink CDC Pipeline Kafka Connector 오픈소스 커스텀 개발 — 의사결정 및 구현 담당
 
-### 진행 업무
+> Avro + Schema Registry 미지원 문제를 오픈소스 커스텀으로 해결
 
-- **좀더 안전하면서도 편리한 인증을 위한 `AccessToken`, `RefreshToken`, `Cookie` 사용**
-    - 사용자 인증을 안전하게 하기 위해 **`AccessToken`, `RefreshToken`, `Cookie`**  를 사용했습니다.
-    - **`Cookie`** 를 사용하는 과정에서 분명히 백엔드에서 **`Cookie`** 를 설정해 응답을 했지만, 프론트엔드에서 받은 응답에는 **`Cookie`** 가 포함되지 않는 문제가 있었습니다.
-    - 몇번의 실험 끝에 브라우저에서만 **`Cookie`** 가 제대로 표현되지 않는 것이고 이는 **`Cookie`** 의 몇몇 속성에 문제가 있었기 때문이었습니다.
-    - 자세한 사항은 [블로그 링크](https://www.notion.so/Great-ab2740cf8f6e450684d15e816da65742) 에서 확인할 수 있습니다.
+- Flink CDC Pipeline YAML의 Avro + Schema Registry 미지원 문제를 확인, 오픈소스 커스텀으로 직접 구현하여 운영 적용
+- 유지보수 부담은 AI 에이전트 기반 문서화 자동화로 대응
 
-## Hust 홈페이지
+### 사내 기술 공유
 
-동아리 홈페이지 개발 프로젝트
+- 사내 K8S 첫 도입 시점에 100명 규모 개발 조직 대상 Kubernetes/Istio 기초 개념~실습 기술 공유 진행
 
-대표 사용 기술 : **`Servlet`, `JSP`, `HTML5`, `BootStrap`, `Jquery`, `WebSocket`, `JDBC`**
+# 프로젝트
 
-레퍼지토리 : [https://github.com/robinjoon/HUST_WEB](https://github.com/robinjoon/HUST_WEB)
+## Loop — DDD + Clean Architecture 기반 Kotlin/GraphQL 사이드 프로젝트
 
-### 진행 업무
+🔗 [Spotit-KR/loop](https://github.com/Spotit-KR/loop) · 2026.01 ~ 현재
 
-- **데이터 베이스 연결을 위한 `JDBC` 사용**
-    - 회원, 게시글, 댓글 등의 저장을 위해 MariaDB를 사용했고, Java에서 데이터베이스 연결을 위해 JDBC를 사용했습니다.
-    - 현대의 Java 진영에서 사용하는 데이터베이스 연결 기술의 원천인 JDBC의 이해를 할 수 있었습니다.
-- **동적인 웹페이지 생성을 위한 `Servlet`, `JSP` 사용**
-    - 게시글마다 다른 데이터를 보여줘야 하기 때문에 **`Servlet`**, **`JSP`** 를 사용했습니다.
-    - 현대의 Spring MVC 프레임워크의 원천 기술인 **`Servlet`** 에 대해 이해할 수 있었습니다.
-- **실시간 통신을 위한 `Jquery`와 `WebSocket` 사용**
-    - 몇몇 기능의 구현을 위해선 실시간으로 서버와 통신을 수행해야 했습니다.
-    - 이를 위해 **`WebSocket`** 을 사용하기로 했고, 브라우저에서 **`WebSocket`** 을 쉽게 사용하기 위해 **`Jquery`** 를 사용했습니다.
+### AI 에이전트 아키텍처 하네스 설계
 
-## 오클락
-### 진행 업무
-- **채팅 기능 구현을 위한 `WebSocket` 사용**
-    - **`WebSocket`** 을 사용해 채팅 기능을 구현했습니다.
-    - **`Spring`**의 **`TextWebSocketHandler`** 를 이용했습니다.
-- **민감 정보 제외를 위한 `DTO` 분리**
-    - 채팅 상대방의 정보를 조회하는 기능을 구현했습니다.
-    - 민감한 개인정보가 포함되는 문제를 해결하기 위해 별도의 DTO를 사용하도록 했습니다.
-    - 자세한 사항은 [블로그 포스팅](https://robinjoon.notion.site/DB-3655ea99edd8413790635d4d3abd5e54) 에서 확인할 수 있습니다.
+- Claude Code Hooks 기반 4종 Python 훅으로 **AI가 계획 없이 코드 수정·PR 생성·위험 명령 실행을 시도할 경우 자동 차단**
+- `CLAUDE.md`에 DDD 레이어 규칙·TDD 사이클·이슈 기반 프로세스를 코드화하여 **AI 에이전트가 아키텍처 규칙을 이해하고 따르도록 강제**
+
+### 프로젝트 기술 스택
+
+- Spring Boot 4 / Kotlin / DGS GraphQL Framework / Exposed ORM / PostgreSQL
+- GitHub Issues 기반 작업 추적, MCP(Google Drive) 연동
+
+## 데벨업 — 개발자 취준생 커뮤니티 플랫폼 (우아한테크코스 6기 백엔드)
+
+🔗 [woowacourse-teams/2024-devel-up](https://github.com/woowacourse-teams/2024-devel-up) · 2024.06 ~ 2024.11
+
+### 풀이 목록 조회 성능 3배 개선 및 시스템 자원 효율화
+
+- 서비스 진입점이기에 부하 테스트 대상으로 선정. 10만 건 데이터 처리에 700ms 소요
+- 쿼리 분할을 통해 응답시간 300ms로 단축, 제출 일자에 인덱스 추가하여 **200ms**로 개선
+- 읽기/쓰기 분리 라우팅 알고리즘 수정으로 **TPS 60 → 120 (2배 개선)**
+
+### AWS 분산 인프라 및 무중단 배포 파이프라인 구축
+
+- 단일 EC2에서 시작해 모니터링 시스템(Docker Compose), 로드밸런서 + WAS/DB 다중화까지 점진적으로 인프라 개선
+- GitHub Actions 기반 CI/CD 파이프라인 구축, Rolling 방식 무중단 배포 설계 및 운영
+
+# 교육 및 학력
+
+## 우아한테크코스 6기 웹 백엔드 수료 (2024.02 ~ 2024.11)
+
+- 페어 프로그래밍과 코드 리뷰 기반 미션 수행을 통한 TDD, OOP, Clean Code 학습
+- 팀 프로젝트를 통한 협업 경험 (기획, 설계, 인프라, 개발)
+
+## 홍익대학교 컴퓨터정보통신공학과 졸업 (2016.03 ~ 2024.02)
+
+# 자격증
+
+정보처리기사 | 한국산업인력공단 | 2023.09
+
+# 기타 활동
+
+## 우아한테크코스 8기 백엔드 코드 리뷰어 (2026.02 ~ 현재)
+
+- 우아한테크코스 교육생의 Java 미션(블랙잭, 자동차 경주, 로또 등) PR에 대한 코드 리뷰 수행
+- OOP 설계 원칙, 테스트 전략, 네이밍/가독성, 책임 분리 등을 중심으로 멘토링 톤의 리뷰를 제공하여 교육생의 성장을 지원
+- 리뷰 품질과 효율 향상을 위해 AI(Claude) 기반의 미션별 리뷰 체크리스트 자동 생성 및 PR 분석 워크플로우를 자체 구축하여 활용 중
+
+## 외부 발표
+
+- **Kotlin User Group Seoul 백엔드 밋업** — 「신입 개발자의 Kotlin, Kotest 입문기」 발표 (Kotest Spec, Spring 연동, Rest Docs DSL 등)
