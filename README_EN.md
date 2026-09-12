@@ -1,8 +1,8 @@
 # Subin Im — Backend Engineer
 
-A backend engineer with end-to-end experience designing and operating everything from backend APIs to real-time data pipelines (Flink CDC) and Kubernetes platforms. I have taken the lead on my teams' hardest technical problems — shared library design, open-source customization, and performance optimization — and I give back what I learn through internal tech talks, my blog, and external conference sessions.
+A backend engineer with end-to-end experience designing and operating everything from backend APIs to real-time data pipelines (Flink CDC) and Kubernetes platforms. I have taken the lead on my teams' hardest technical problems — shared library design, open-source customization, and performance optimization — and I give back what I learn through internal tech talks and external conference sessions.
 
-📎 [Portfolio](https://www.notion.so/328e2d0a976a8037b81ec37660f05a2a) · ✍️ [Blog](https://blog.robinjoon.xyz) · ✉️ 0108dlatnqls@gmail.com
+📎 [Portfolio](https://www.notion.so/328e2d0a976a8037b81ec37660f05a2a) · ✉️ 0108dlatnqls@gmail.com
 
 # Tech Stack
 
