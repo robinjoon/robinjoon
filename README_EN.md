@@ -1,112 +1,113 @@
+# Subin Im — Backend Engineer
+
+A backend engineer with end-to-end experience designing and operating everything from backend APIs to real-time data pipelines (Flink CDC) and Kubernetes platforms. I have taken the lead on my teams' hardest technical problems — shared library design, open-source customization, and performance optimization — and I give back what I learn through internal tech talks, my blog, and external conference sessions.
+
+📎 [Portfolio](https://www.notion.so/328e2d0a976a8037b81ec37660f05a2a) · ✍️ [Blog](https://blog.robinjoon.xyz) · ✉️ 0108dlatnqls@gmail.com
+
 # Tech Stack
 
-1. **`Java`**
-2. **`Spring`**, **`Spring Boot`**
-3. **`JPA`**, **`Spring Data JPA`**
-4. **`MariaDB`**, `Mysql`
-5. `Servlet` & `JSP`
+| Category | Technologies |
+| --- | --- |
+| Language & Framework | **`Kotlin`**, **`Spring Boot`**, **`Exposed ORM`**, **`Netflix DGS`**, `Kotest` |
+| Data & Streaming | **`Apache Flink`**, **`Flink CDC`**, **`Kafka`**, `Avro`, `Schema Registry` |
+| Infra & Ops | `PostgreSQL`, `MongoDB`, **`Kubernetes`**, `Istio`, `ArgoCD`, `Grafana`, `Prometheus` |
 
 # Work Experience
 
-| Year         | Activity                                                                                      |
-|--------------|-----------------------------------------------------------------------------------------------|
-| 2024 - Present | Woowa Tech Course, 6th Backend Developer Training Program                                    |
-| 2022         | [Goal-achievement-system](https://github.com/Goal-achievement-system) Backend Developer        |
-| 2022         | [Great-Student-Manage-System](https://github.com/Great-Student-Manage-System) Backend Developer|
-| 2020 - 2021  | Developed the homepage for the HUST Information Security Club at Hongik University            |
-| 2018         | Vice President of the HUST Information Security Club at Hongik University                     |
-| 2016 - 2023  | Member of the HUST Information Security Club at Hongik University                             |
-| 2016 - 2023  | Studied Computer and Information Communications Engineering at Hongik University              |
+## GC Company (Yeogi Eottae) | Accommodation Platform Improvement TF (2026.06 ~ Present)
 
-# Project List
+## Connectwave Inc. | Platform Development Division, Platform Development Team (2024.12 ~ 2026.05)
 
-## GoalKeeper
+### Shared Libraries for a 100-Engineer Organization (2 libraries) — Led design and implementation
 
-This is the GoalKeeper project, a system to motivate users in achieving their goals.
+> Designed and implemented 2 libraries used across 2 projects and 15 modules
 
-**Key Technologies**: **`Spring Interceptor`, `ExceptionHandler`**
+- **Audit Log library** — Simultaneous Spring Boot 2.x / 3.x support; storage abstraction plus an AOP-based structure, adopted across the entire new platform
+- **Kotlin Exposed ORM pagination library** — Integrated with Spring Data `Pageable`, unifying how the whole engineering organization handles pagination
 
-Repository: [Goal-achievement-system/backend](https://github.com/Goal-achievement-system/backend)
+### Load Testing and Performance Optimization of the Product Storage System — Led bottleneck analysis and improvements
 
-### Tasks
+> **200s → 2s (100x improvement)** for a bulk load of 50,000 records
 
-- **Used `Spring Interceptor` for Common Task Processing**
-    - Since user authentication using Access Tokens is required for almost all features, `Spring Interceptor` was used to execute this task before any controller operations.
-  
-- **Solved CORS Configuration Issues in `Spring Interceptor` and `Spring WebMvcConfigurer`**
-    - Faced issues with CORS settings not working as expected.
-    - By deeply studying CORS and analyzing packets with BurpSuite, discovered that the problem was caused by improperly handled preflight requests.
-    - Identified that the Access Token handling interceptor was mistakenly trying to extract tokens from preflight requests and resolved this by applying an exception handling mechanism.
-    - Details can be found in [this blog post](https://www.notion.so/CORS-a320cfb895234bdeb8cc5e7248ac65a2).
-  
-- **Reduced Duplicate Exception Handling with `ExceptionHandler`**
-    - There were repeated try-catch blocks in controllers, affecting readability and increasing potential for errors.
-    - Abstracted exception handling and used **`ExceptionHandler`** to separate exception processing tasks from controllers.
+- Thread-dump-based bottleneck analysis (accumulated MongoDB exceptions) brought **200s → 10s**; further optimization via bulk processing and scale-out reached a final **2s**
 
-## GoalKeeper 2
+### Admin API and OpenAI Batch System for an AI Vertical Service — Owned API and batch system implementation
 
-This project extends the original GoalKeeper project by applying new features and technologies.
+> Automated product recommendation copy generation on the OpenAI Batch API, cutting **token cost by 50%**
 
-**Key Technologies**: **`Spring Data JPA`, `GitHub Actions`, `Servlet Filter`, `Spring AOP`, `Spring Interceptor`**
+- Built the AI recommendation copy pipeline around admin-configured settings and a weekly batch, with blind testing to verify quality
+- Established stable operations using the OpenAI Batch API with one-minute polling (`tailrec`)
 
-Repository: [GoalKeeperV2-backend](https://github.com/GoalKeeperV2-0/GoalKeeperV2-backend-)
+### Apache Flink CDC Pipeline System — Led design and construction
 
-### Tasks
+> MongoDB → Kafka → Hadoop real-time CDC pipeline at **~30K TPS with sub-500ms latency**
 
-- **Built a Logging System using `Servlet Filter`, `Spring AOP`, `Spring Interceptor`**
-    - The original version lacked logging, making it hard to trace errors when adding new features.
-    - Set up a logging system using **`Servlet Filter`**, **`Spring AOP`**, and **`Spring Interceptor`**.
-    - Detailed learning process documented in [this blog post](https://www.notion.so/Spring-Boot-REST-API-System-Logging-6a833112c36b4482855de067b255e1c7).
+- Prototyped with Flink SQL (Streampark), identified its limits in handling before/after diffs, and migrated to the Kotlin DataStream API
+- Secured operational stability with a Kubernetes Flink Operator + ArgoCD GitOps deployment pipeline
 
-- **Implemented `Spring Data JPA` for an Object-Oriented Design**
-    - Previous version used JdbcTemplate, embedding SQL statements directly, which often buried business logic in SQL.
-    - Used **`Spring Data JPA`** to keep business logic in entity classes and implement changing operational policies in services.
+### Open-Source Customization of the Apache Flink CDC Pipeline Kafka Connector — Owned the decision and implementation
 
-- **Implemented Automated Deployment using `GitHub Actions`**
-    - Previously, deployments required manually connecting to the server and running commands, often leading to issues.
-    - Set up **`GitHub Actions`** for CI/CD and automated server deployment, reducing manual errors.
+> Solved missing Avro + Schema Registry support through open-source customization
 
-## Great
+- Identified that Flink CDC Pipeline YAML lacked Avro + Schema Registry support, implemented it directly as an open-source customization, and put it into production
+- Offset the maintenance burden with AI-agent-based documentation automation
 
-Great is a student management system designed for small-scale academy instructors.
+### Internal Tech Sharing
 
-**Key Technologies**: **`AccessToken`, `RefreshToken`, `Cookie`**
+- Delivered a Kubernetes/Istio session (fundamentals through hands-on practice) to a 100-engineer organization at the time of the company's first K8s adoption
 
-Repository: [Great-Student-Manage-System/Backend](https://github.com/Great-Student-Manage-System/Backend)
+# Projects
 
-### Tasks
+## Loop — A Kotlin/GraphQL Side Project Built on DDD + Clean Architecture
 
-- **Used `AccessToken`, `RefreshToken`, `Cookie` for Safer and Convenient Authentication**
-    - Implemented **`AccessToken`, `RefreshToken`, `Cookie`** for secure user authentication.
-    - Faced an issue where cookies set by the backend weren’t visible in the frontend due to certain cookie attributes.
-    - Detailed analysis available in [this blog post](https://www.notion.so/Great-ab2740cf8f6e450684d15e816da65742).
+🔗 [Spotit-KR/loop](https://github.com/Spotit-KR/loop) · 2026.01 ~ Present
 
-## HUST Website
+### AI Agent Architecture Harness
 
-Developed a homepage for the HUST club.
+- Four Python hooks built on Claude Code Hooks that **automatically block the AI from editing code, opening PRs, or running dangerous commands without a plan**
+- Encoded DDD layering rules, the TDD cycle, and an issue-driven process into `CLAUDE.md` so that **AI agents understand and follow the architecture rules**
 
-**Key Technologies**: **`Servlet`, `JSP`, `HTML5`, `Bootstrap`, `Jquery`, `WebSocket`, `JDBC`**
+### Project Stack
 
-Repository: [HUST_WEB](https://github.com/robinjoon/HUST_WEB)
+- Spring Boot 4 / Kotlin / DGS GraphQL Framework / Exposed ORM / PostgreSQL
+- GitHub Issues for task tracking, MCP (Google Drive) integration
 
-### Tasks
+## Devel-Up — A Community Platform for Aspiring Developers (Woowa Techcourse 6th, Backend)
 
-- **Used `JDBC` for Database Connectivity**
-    - Used MariaDB to store data like members, posts, and comments, connecting it with Java through JDBC.
+🔗 [woowacourse-teams/2024-devel-up](https://github.com/woowacourse-teams/2024-devel-up) · 2024.06 ~ 2024.11
 
-- **Developed Dynamic Web Pages using `Servlet`, `JSP`**
-    - Employed **`Servlet`** and **`JSP`** to dynamically display post data.
-  
-- **Enabled Real-Time Communication with `Jquery` and `WebSocket`**
-    - Implemented **`WebSocket`** for real-time server communication with frontend support via **`Jquery`**.
+### 3x Faster Solution List Queries and More Efficient Resource Usage
 
-## O’Clock
+- Selected as a load-testing target as the service's entry point; processing 100,000 records took 700ms
+- Split the query to cut response time to 300ms, then added an index on the submission date to reach **200ms**
+- Reworked the read/write routing algorithm for **TPS 60 → 120 (2x improvement)**
 
-### Tasks
+### Distributed AWS Infrastructure and Zero-Downtime Deployment Pipeline
 
-- **Implemented Chat Functionality with `WebSocket`**
-    - Built chat functionality using **`WebSocket`** with **`TextWebSocketHandler`** in **`Spring`**.
-  
-- **Separated DTO for Sensitive Information Exclusion**
-    - Implemented a DTO to prevent sensitive data from being exposed when querying chat participant info.
-    - Detailed documentation in [this blog post](https://robinjoon.notion.site/DB-3655ea99edd8413790635d4d3abd5e54).
+- Evolved the infrastructure incrementally from a single EC2 instance to a monitoring stack (Docker Compose) and a load balancer with redundant WAS/DB
+- Built a GitHub Actions CI/CD pipeline and designed and operated rolling zero-downtime deployments
+
+# Education
+
+## Woowa Techcourse 6th, Web Backend — Completed (2024.02 ~ 2024.11)
+
+- Learned TDD, OOP, and Clean Code through missions based on pair programming and code review
+- Gained collaboration experience through team projects (planning, design, infrastructure, development)
+
+## Hongik University, B.S. in Computer and Information Communications Engineering (2016.03 ~ 2024.02)
+
+# Certifications
+
+Engineer Information Processing | Human Resources Development Service of Korea | 2023.09
+
+# Other Activities
+
+## Woowa Techcourse 8th, Backend Code Reviewer (2026.02 ~ Present)
+
+- Review PRs for students' Java missions (Blackjack, Racing Car, Lotto, and more)
+- Provide mentoring-toned reviews focused on OOP design principles, testing strategy, naming and readability, and separation of responsibilities to support student growth
+- Built and actively use an AI (Claude) based workflow that auto-generates per-mission review checklists and analyzes PRs, improving review quality and throughput
+
+## External Talks
+
+- **Kotlin User Group Seoul Backend Meetup** — "A New Developer's Introduction to Kotlin and Kotest" (Kotest Spec, Spring integration, Rest Docs DSL, and more)
